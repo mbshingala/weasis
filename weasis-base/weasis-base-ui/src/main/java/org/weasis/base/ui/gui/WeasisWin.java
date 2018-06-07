@@ -671,50 +671,50 @@ public class WeasisWin {
         menuBar.add(menuSelectedPlugin);
         menuSelectedPlugin.addPopupMenuListener();
 
-        final JMenu helpMenuItem = new JMenu(Messages.getString("WeasisWin.help")); //$NON-NLS-1$
-        final String helpURL = System.getProperty("weasis.help.url"); //$NON-NLS-1$
-        if (helpURL != null) {
-            final JMenuItem helpContentMenuItem = new JMenuItem(Messages.getString("WeasisWin.guide")); //$NON-NLS-1$
-            helpContentMenuItem.addActionListener(e -> {
-                try {
-                    JMVUtils.openInDefaultBrowser(helpContentMenuItem, new URL(helpURL));
-                } catch (MalformedURLException e1) {
-                    LOGGER.error("Open URL in default browser", e); //$NON-NLS-1$
-                }
-            });
-            helpMenuItem.add(helpContentMenuItem);
-        }
-
-        final JMenuItem webMenuItem = new JMenuItem(Messages.getString("WeasisWin.shortcuts")); //$NON-NLS-1$
-        webMenuItem.addActionListener(e -> {
-            try {
-                URL url = new URL(BundleTools.SYSTEM_PREFERENCES.getProperty("weasis.help.shortcuts")); //$NON-NLS-1$
-                JMVUtils.openInDefaultBrowser(webMenuItem, url);
-            } catch (MalformedURLException e1) {
-                LOGGER.error("Open URL in default browser", e); //$NON-NLS-1$
-            }
-        });
-        helpMenuItem.add(webMenuItem);
-
-        final JMenuItem websiteMenuItem = new JMenuItem(Messages.getString("WeasisWin.online")); //$NON-NLS-1$
-        websiteMenuItem.addActionListener(e -> {
-            try {
-                URL url = new URL(BundleTools.SYSTEM_PREFERENCES.getProperty("weasis.help.online")); //$NON-NLS-1$
-                JMVUtils.openInDefaultBrowser(websiteMenuItem, url);
-            } catch (MalformedURLException e1) {
-                LOGGER.error("Open URL in default browser", e); //$NON-NLS-1$
-            }
-        });
-        helpMenuItem.add(websiteMenuItem);
-        final JMenuItem aboutMenuItem =
-            new JMenuItem(String.format(Messages.getString("WeasisAboutBox.about"), AppProperties.WEASIS_NAME)); //$NON-NLS-1$
-        aboutMenuItem.addActionListener(e -> {
-            ColorLayerUI layer = ColorLayerUI.createTransparentLayerUI(rootPaneContainer);
-            WeasisAboutBox about = new WeasisAboutBox(getFrame());
-            ColorLayerUI.showCenterScreen(about, layer);
-        });
-        helpMenuItem.add(aboutMenuItem);
-        menuBar.add(helpMenuItem);
+//        final JMenu helpMenuItem = new JMenu(Messages.getString("WeasisWin.help")); //$NON-NLS-1$
+//        final String helpURL = System.getProperty("weasis.help.url"); //$NON-NLS-1$
+//        if (helpURL != null) {
+//            final JMenuItem helpContentMenuItem = new JMenuItem(Messages.getString("WeasisWin.guide")); //$NON-NLS-1$
+//            helpContentMenuItem.addActionListener(e -> {
+//                try {
+//                    JMVUtils.openInDefaultBrowser(helpContentMenuItem, new URL(helpURL));
+//                } catch (MalformedURLException e1) {
+//                    LOGGER.error("Open URL in default browser", e); //$NON-NLS-1$
+//                }
+//            });
+//            helpMenuItem.add(helpContentMenuItem);
+//        }
+//
+//        final JMenuItem webMenuItem = new JMenuItem(Messages.getString("WeasisWin.shortcuts")); //$NON-NLS-1$
+//        webMenuItem.addActionListener(e -> {
+//            try {
+//                URL url = new URL(BundleTools.SYSTEM_PREFERENCES.getProperty("weasis.help.shortcuts")); //$NON-NLS-1$
+//                JMVUtils.openInDefaultBrowser(webMenuItem, url);
+//            } catch (MalformedURLException e1) {
+//                LOGGER.error("Open URL in default browser", e); //$NON-NLS-1$
+//            }
+//        });
+//        helpMenuItem.add(webMenuItem);
+//
+//        final JMenuItem websiteMenuItem = new JMenuItem(Messages.getString("WeasisWin.online")); //$NON-NLS-1$
+//        websiteMenuItem.addActionListener(e -> {
+//            try {
+//                URL url = new URL(BundleTools.SYSTEM_PREFERENCES.getProperty("weasis.help.online")); //$NON-NLS-1$
+//                JMVUtils.openInDefaultBrowser(websiteMenuItem, url);
+//            } catch (MalformedURLException e1) {
+//                LOGGER.error("Open URL in default browser", e); //$NON-NLS-1$
+//            }
+//        });
+//        helpMenuItem.add(websiteMenuItem);
+//        final JMenuItem aboutMenuItem =
+//            new JMenuItem(String.format(Messages.getString("WeasisAboutBox.about"), AppProperties.WEASIS_NAME)); //$NON-NLS-1$
+//        aboutMenuItem.addActionListener(e -> {
+//            ColorLayerUI layer = ColorLayerUI.createTransparentLayerUI(rootPaneContainer);
+//            WeasisAboutBox about = new WeasisAboutBox(getFrame());
+//            ColorLayerUI.showCenterScreen(about, layer);
+//        });
+//        helpMenuItem.add(aboutMenuItem);
+//        menuBar.add(helpMenuItem);
         return menuBar;
     }
 
